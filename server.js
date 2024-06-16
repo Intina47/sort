@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req, res) => {
     const results = [];
-    fs.createReadStream('worker_visa.csv')
+    fs.createReadStream('./worker_visa.csv')
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
