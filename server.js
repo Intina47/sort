@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req, res) => {
     const results = [];
-    fs.createReadStream('./worker_visa.csv')
+    fs.createReadStream(path.join(__dirname, 'worker_visa.csv'))
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
@@ -41,7 +41,7 @@ app.get('/data', (req, res) => {
 
 app.get('/cities', async (_, res) => {
     const results = [];
-    fs.createReadStream('worker_visa.csv')
+    fs.createReadStream(path.join(__dirname, 'worker_visa.csv'))
         .pipe(csv())
         .on('data', (data) => results.push(data))
         .on('end', () => {
