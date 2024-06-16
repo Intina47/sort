@@ -7,7 +7,6 @@ const path = require('path');
 const app = express();
 app.use(cors());
 
-// serve our index.html
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
@@ -53,5 +52,5 @@ app.get('/cities', async (_, res) => {
 );
 
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running');
 });
